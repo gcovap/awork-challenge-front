@@ -2,6 +2,13 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.7.
 
+
+## Accessing the Application
+
+The application can be accessed at the following URL:
+
+[Onboarding app](https://main.d3k7ntvyg6sta2.amplifyapp.com/onboarding)
+
 ## Development server
 
 To start a local development server, run:
