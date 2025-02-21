@@ -27,11 +27,11 @@
 
   <div
     class="freddy-container"
-    [@freddyState]="freddyVisible ? 'visible' : 'hidden'"
+    [@freddyState]="progress >= 100 ? 'visible' : 'hidden'"
     (@freddyState.done)="onFreddyAnimationDone($event)"
   >
     <img
-      src="assets/onboarding/images/freddy-mercury.webp"
+      src="/assets/onboarding/images/freddy-mercury.webp"
       alt="Freddy happy"
     />
   </div>

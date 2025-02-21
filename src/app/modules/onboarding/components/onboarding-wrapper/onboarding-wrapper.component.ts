@@ -77,34 +77,29 @@ export class OnboardingWrapperComponent implements OnInit {
     }
   }
 
-  customTooltip({ data }: { data: any }): string {
+  customTooltip({ data }: { data: { name: string; value: string } }): string {
     return `${data.name}: ${data.value}%`;
   }
+
   toggleItem(index: number) {
     this.checklist[index].completed = !this.checklist[index].completed;
+    this.onboardingService
+      .updateProgress(this.checklist)
+      .subscribe((result) => {
+        this.progressMessage = result.motivationMessage || '';
+      });
     this.updateProgress();
   }
 
-
- async updateProgress() {
-    const completed = this.checklist.filter(item => item.completed).length;
+  async updateProgress() {
+    const completed = this.checklist.filter((item) => item.completed).length;
     const newProgress = (completed / this.checklist.length) * 100;
-
-    if (newProgress === 100 && this.progress < 100) {
-      this.freddyVisible = true
-    } else {
-      this.freddyVisible = false;
-    }
 
     this.progress = newProgress;
     this.chartData = [
       { name: 'Completed', value: this.progress },
-      { name: 'Remaining', value: 100 - this.progress }
+      { name: 'Remaining', value: 100 - this.progress },
     ];
-
-    this.onboardingService.updateProgress(this.checklist).subscribe(result => {
-      this.progressMessage = result.motivationMessage || '';
-    });
   }
 
   onFreddyAnimationDone(event: any) {
