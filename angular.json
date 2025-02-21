@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "tech-interview": {
+    "awork-interview": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/tech-interview",
+            "outputPath": "dist/awork-interview",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -32,6 +32,7 @@
               }
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/magenta-violet.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -61,13 +62,16 @@
           "defaultConfiguration": "production"
         },
         "serve": {
+          "options": {
+            "port": 3030
+          },
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "tech-interview:build:production"
+              "buildTarget": "awork-interview:build:production"
             },
             "development": {
-              "buildTarget": "tech-interview:build:development"
+              "buildTarget": "awork-interview:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -91,6 +95,7 @@
               }
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/magenta-violet.css",
               "src/styles.scss"
             ],
             "scripts": []

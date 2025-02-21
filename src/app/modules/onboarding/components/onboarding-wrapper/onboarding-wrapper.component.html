@@ -1,0 +1,38 @@
+<div class="onboarding-container">
+  <p class="title">🚀 Complete the steps to discover!</p>
+  <div class="chart-container">
+    <div class="column">
+      <!-- Checklist -->
+      <div class="checklist">
+        <mat-checkbox
+          *ngFor="let item of checklist; let i = index"
+          [checked]="item.completed"
+          (change)="toggleItem(i)"
+          color="primary"
+        >
+          {{ item.label }}
+        </mat-checkbox>
+      </div>
+    </div>
+    <div class="column">
+      <div class="donut-container">
+        <progress-donut [chartData]="chartData"></progress-donut>
+      </div>
+    </div>
+  </div>
+  <div class="progress-description">
+    <h2>{{ progress | number : "1.0-0" }}%</h2>
+    <p>{{ progressMessage }}</p>
+  </div>
+
+  <div
+    class="freddy-container"
+    [@freddyState]="freddyVisible ? 'visible' : 'hidden'"
+    (@freddyState.done)="onFreddyAnimationDone($event)"
+  >
+    <img
+      src="assets/onboarding/images/freddy-mercury.webp"
+      alt="Freddy happy"
+    />
+  </div>
+</div>

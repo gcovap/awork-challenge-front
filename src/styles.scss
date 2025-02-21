@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+  margin: 0;
+  height: 100%;
+}
+.dark-theme {
+  // Add your dark theme variables here
+  --background-color: #1a1a1a;
+  --text-color: #ffffff;
+  --primary-color: #bb86fc;
+  --secondary-color: #03dac6;
+  --error-color: #cf6679;
+
+  // Add specific component overrides as needed
+  .mat-card {
+    background-color: #2d2d2d;
+    color: #ffffff;
+  }
+
+  .mat-toolbar {
+    background-color: #2d2d2d;
+    color: #ffffff;
+  }
+
+  // Add more component-specific dark theme styles as needed
+}

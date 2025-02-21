@@ -1,4 +1,4 @@
-# TechInterview
+# Awork - TechInterview
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.7.
 
@@ -10,7 +10,7 @@ To start a local development server, run:
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Once the server is running, open your browser and navigate to `http://localhost:3030/`. The application will automatically reload whenever you modify any of the source files.
 
 ## Code scaffolding
 

@@ -1,0 +1,10 @@
+<div class="wrapper" [ngClass]="{'dark-theme': isDarkMode}">
+  <div class="theme-toggle">
+    <button (click)="toggleTheme()">
+      {{ isDarkMode ? '☀️' : '🌙' }}
+    </button>
+  </div>
+  <div class="flex-container">
+    <router-outlet> </router-outlet>
+  </div>
+</div>
